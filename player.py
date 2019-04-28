@@ -1,26 +1,35 @@
-
-import pygame,tkinter as tk
+# ok then go on with tk module
+# /home/yu/Downloads/player_im
+import pygame, tkinter as tk
+from tkinter.font import Font
 from mutagen.mp3 import MP3
 from tkinter import ttk
+from PIL import Image, ImageTk
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import os
+import logging
 from os.path import isfile, join
 from random import choice
 from threading import Thread
 import requests
 from bs4 import BeautifulSoup as bs
 import re
-import sys,re
+import pdb
+import sys, re
 
-global path,check_event_thread,lyric,driver,line_index,display_flag
-path='/home/yu/Downloads/Gmail'
-lyric= '/home/yu/Music/lyric'
-line_index =0
+global path, check_event_thread, lyric, driver, line_index, display_flag, image,start_index,end_index
+path = '/home/yu/Downloads/Gmail'
+lyric = '/home/yu/Music/lyric'
+image = '/home/yu/Pictures'
+line_index = 0
 display_flag = True
+start_index='1.0'
+end_index="1.0"
 
-lyric_line_pattern= re.compile(r'^\[\d+:\d+\.\d+\]')
-lyric_split_pattern= re.compile(r'(?<=\d)\](?=\S+)')
+lyric_line_pattern = re.compile(r'^\[\d+:\d+\.\d+\]')
+lyric_split_pattern = re.compile(r'(?<=\d)\](?=\S+)')
+logging.basicConfig(level=logging.INFO)
 '''
 
 def Get_lyric(Title,*Artist):
@@ -56,30 +65,36 @@ def Get_lyric_bs(Title,*Artist):
 
     return '\\n'.join(lyric)
 '''
+
+
 class Application(tk.Frame):
     def __init__(self, master=None):
-        #super is an builtin function to get the father class ,here it likes Frame.__init__
+        # super is an builtin function to get the father class ,here it likes Frame.__init__
         super().__init__(master)
 
         self.current_song_index = 0
         # play mode 0 = sequence play ; play mode 1 = random play
         self.play_mode = 0
+
         self.SONG_END_EVENT = pygame.USEREVENT
-        self.QUIT_EVENT= pygame.USEREVENT+1
+        self.QUIT_EVENT = pygame.USEREVENT + 1
         self.Song_list = self.Create_Song_List()
         pygame.init()
         pygame.mixer.init()
         pygame.mixer_music.set_endevent(self.SONG_END_EVENT)
-        self.quit_event=pygame.event.Event(self.QUIT_EVENT,message="stop thread")
+        self.quit_event = pygame.event.Event(self.QUIT_EVENT, message="stop thread")
+
         self.current_song_lyric = " "
-        self.song_length=0
+        self.song_length = 0
         self.master = master
         self.pack()
-        self.Create_UI()
-        self.stop_flag = False
-        self.play_flag = True
+        self.bold_font = Font(family="Helvetica", size=20, weight="bold")
 
-# later would create song class which containing title,artist,album, lyric and so on
+        self.Create_UI()
+        self.lyric.tag_configure("bold",font =self.bold_font,foreground ="Blue")
+        self.stop_flag = True
+
+    # later would create song class which containing title,artist,album, lyric and so on
     # then create a song class list
 
     def Create_Song_List(self):
@@ -94,8 +109,7 @@ class Application(tk.Frame):
             s.sort(key=str.lower)
             return s
 
-
-    def Get_lyric(self,lyric_file):
+    def Get_lyric(self, lyric_file):
         global lyric_line_pattern
         lyriclist = []
 
@@ -103,7 +117,7 @@ class Application(tk.Frame):
 
             sec = int(time[1:3]) * 60 + float(time[4:len(time) - 1])
 
-            return int(sec*1000)
+            return int(sec * 1000)
 
         if not os.path.isfile(lyric_file):
             return []
@@ -122,27 +136,30 @@ class Application(tk.Frame):
         return lyriclist
 
     def show_lyric(self):
-        global line_index,display_flag
+        for line in self.current_song_lyric:
+            self.lyric.insert(tk.END, line[1])
 
-        while not self.stop_flag :
+    def highlight_lyric(self):
+        global line_index,start_index,end_index
+        while True:
+            if not self.stop_flag:
+                if self.current_song_lyric and line_index < len(self.current_song_lyric):
+                    if len(self.current_song_lyric[line_index]) > 1:
+                        print("3", self.progress_bar["value"], int(self.current_song_lyric[line_index][0]))
+                        if self.progress_bar["value"] >= int(self.current_song_lyric[line_index][0]):
+                            if line_index>0:
+                                self.lyric.tag_remove("bold", start_index, end_index)
+                            start_index = str(line_index + 1) + '.0'
+                            end_index = str(line_index + 1) + '.' + str(len(self.current_song_lyric[line_index][1]) - 1)
+                            self.lyric.tag_add("bold", start_index, end_index)
+                            line_index = line_index + 1
+                elif line_index == len(self.current_song_lyric) and self.progress_bar["value"] == self.song_length:
+                    self.lyric.tag_remove("bold", start_index, end_index)
+            else:
+                self.lyric.tag_remove("bold", start_index, end_index)
 
-            if  self.current_song_lyric and line_index < len(self.current_song_lyric)-1:
-                if  len(self.current_song_lyric[line_index])>1 :
-                    if (self.progress_bar["value"] >= int(self.current_song_lyric[line_index][0])) \
-                            and self.progress_bar["value"] < int(self.current_song_lyric[line_index + 1][0]):
-                        if display_flag:
-
-                            self.lyric.insert(str(line_index+1)+'.0', self.current_song_lyric[line_index][1])
-                            display_flag= False
-
-                    elif(self.progress_bar["value"] >=int(self.current_song_lyric[line_index + 1][0])):
-                        line_index += 1
-                        display_flag = True
-
-            elif (not self.current_song_lyric ):
-                self.lyric.delete("1.0")
-
-
+    def __clear__(self):
+        pass
     def Next_Song(self):
 
         self.list.select_clear(self.current_song_index, self.current_song_index)
@@ -179,28 +196,31 @@ class Application(tk.Frame):
             next_song = choice(self.Song_list)
         return self.Song_list.index(next_song)
 
+
     def Play(self):
         # play current song
-        global path
+        global path, line_index
         self.stop_flag = False
-        song_name=self.Song_list[self.current_song_index]
-        lyric_name = song_name.split('.')[0]+'.lrc'
-        song=os.path.join(path,song_name)
-        lyricfile=os.path.join(lyric,lyric_name)
+        line_index = 0
+        song_name = self.Song_list[self.current_song_index]
+        lyric_name = song_name.split('.')[0] + '.lrc'
+        song = os.path.join(path, song_name)
+        lyricfile = os.path.join(lyric, lyric_name)
         self.current_song_lyric = self.Get_lyric(lyricfile)
+        self.show_lyric()
 
         self.list.selection_set(self.current_song_index, self.current_song_index)
-        self.song_length=MP3(song).info.length
+        self.song_length = MP3(song).info.length
 
-        self.progress_bar["maximum"]= self.song_length*1000
+        self.progress_bar["maximum"] = self.song_length * 1000
         pygame.mixer.music.load(song)
         pygame.mixer_music.play(loops=0, start=0.0)
 
+
     def Stop(self):
 
+        self.stop_flag = True
         pygame.mixer_music.stop()
-        self.stop_flag= True
-
 
     def Pause(self):
 
@@ -256,64 +276,88 @@ class Application(tk.Frame):
 
         self.play_mode = 0
 
-
     def check_event(self):
-
+        global line_index
 
         while True:
 
             for event in pygame.event.get():
 
                 if event == self.quit_event:
-
                     return 0
 
                 if event.type == self.SONG_END_EVENT:
-
                     self.Next_Song()
-                    self.Play()
                     self.lyric.delete("1.0")
+                    self.Play()
 
             else:
-                if (self.stop_flag== False):
+                if (self.stop_flag == False):
                     self.progress_bar["value"] = pygame.mixer_music.get_pos()
 
-
-
     def Create_UI(self):
+        global image
 
         self.scroll_bar = tk.Scrollbar(self)
 
-        self.list = tk.Listbox(self,yscrollcommand=self.scroll_bar.set,bg="white",
+        self.list = tk.Listbox(self, yscrollcommand=self.scroll_bar.set, bg="white",
                                selectbackground="grey")
         self.scroll_bar.config(command=self.list.yview)
         index = 0
-        for  item in self.Song_list:
-            self.list.insert(index,item)
-            index +=1
+        for item in self.Song_list:
+            self.list.insert(index, item)
+            index += 1
 
-        self.list.bind('<<ListboxSelect>>',self.Click_Song)
+        self.list.bind('<<ListboxSelect>>', self.Click_Song)
+        play_image = os.path.join(image, 'play.png')
 
-        self.play_button = tk.Button(self, text="Play",activebackground="white",command=self.Play)
-        self.stop_button = tk.Button(self, text="Stop", activebackground="white",command=self.Stop)
-        self.next_button= tk.Button(self,text ="Next",activebackground="white",command=self.Next)
-        self.last_button = tk.Button(self,text= "Last",activebackground="white",command =self.Previous)
-        self.random_button = tk.Button(self, text="Random",activebackground="white", command=self.set_to_random_mode)
-        self.sequence_button = tk.Button(self, text="Sequence",activebackground="white",command=self.set_to_sequence_mode)
-        self.quit = tk.Button(self, text="QUIT", fg="red",activebackground="white",
+        '''
+        I wanted to use open to read image file then set button's image but with unknown error ,code as below
+         if os.path.isfile(play_image):
+            with open(play_image,'rb') as binary_image:
+                image1 = binary_image.read()
+                self.play_button = tk.Button(self, text="Play", activebackground="white",
+                                         image=image1, command=self.Play)
+
+        '''
+        # due to above error ,so use image module PIL to open image to see if it works
+        im = Image.open(play_image)
+        width, height = im.size
+        im.thumbnail((width / 4, height / 4))
+
+        ph = ImageTk.PhotoImage(im)
+
+        self.play_button = tk.Button(self, text="Play", activebackground="white",
+                                     image=ph, command=self.Play)
+        self.play_button.image = ph
+        self.stop_button = tk.Button(self, text="Stop", activebackground="white", command=self.Stop)
+        self.next_button = tk.Button(self, text="Next", activebackground="white", command=self.Next)
+        self.last_button = tk.Button(self, text="Last", activebackground="white", command=self.Previous)
+        self.random_button = tk.Button(self, text="Random", activebackground="white", command=self.set_to_random_mode)
+        self.sequence_button = tk.Button(self, text="Sequence", activebackground="white",
+                                         command=self.set_to_sequence_mode)
+        self.quit = tk.Button(self, text="QUIT", fg="red", activebackground="white",
                               command=self.Quit)
-#        self.volumn_scale=tk.Scale(self,command=self.Process_Adjust,variable=vars)
-        self.lyric=tk.Text(self)
-       # self.lyric.insert("1.0",self.current_song_lyric)
+        #        self.volumn_scale=tk.Scale(self,command=self.Process_Adjust,variable=vars)
 
-    #    self.progress_bar=ttk.Progressbar(orient= "horizontal",mode="determinate",maximum=70000,value = 0 )
-        self.progress_bar = ttk.Progressbar( mode="determinate", maximum=70000, value=0)
+        lyric_image = Image.open(image + "/lyric.jpg")
 
-        self.grid(row=0,column=0,rowspan=20,columnspan=15)
-        self.list.grid(row=0, column=1, rowspan=15, columnspan=10,sticky=tk.N+tk.S+tk.W,padx=2,pady=2)
+        lyric_ph = ImageTk.PhotoImage(lyric_image)
+
+        self.lyric = tk.Text(self)
+        self.lyric.tag_configure("BOLD", font=self.bold_font)
+
+        #        self.lyric.image_create(tk.END,lyric_ph)
+        # self.lyric.insert("1.0",self.current_song_lyric)
+
+        #    self.progress_bar=ttk.Progressbar(orient= "horizontal",mode="determinate",maximum=70000,value = 0 )
+        self.progress_bar = ttk.Progressbar(mode="determinate", maximum=70000, value=0)
+
+        self.grid(row=0, column=0, rowspan=20, columnspan=15)
+        self.list.grid(row=0, column=1, rowspan=15, columnspan=10, sticky=tk.N + tk.S + tk.W, padx=2, pady=2)
         self.scroll_bar.grid(row=0, column=0, rowspan=15)
 
-        self.progress_bar.grid(row=16, column=0, columnspan=5,sticky=tk.N+tk.S)
+        self.progress_bar.grid(row=16, column=0, columnspan=5, sticky=tk.N + tk.S)
         self.play_button.grid(row=18, column=1)
         self.stop_button.grid(row=18, column=2)
         self.next_button.grid(row=18, column=3)
@@ -322,23 +366,18 @@ class Application(tk.Frame):
         self.sequence_button.grid(row=18, column=6)
         self.quit.grid(row=18, column=7)
 
-        self.lyric.grid(row=0, column=8, columnspan=8, rowspan=20,padx=3,pady=3)
+        self.lyric.grid(row=0, column=8, columnspan=8, rowspan=20, padx=3, pady=3)
 
 
-
-if (__name__=='__main__'):
-    root = tk.Tk()
-    app = Application(master=root)
+if (__name__ == '__main__'):
+    # window /frame ->other widgets
+    window = tk.Tk()
+    window.title("MP3 player ")
+    window.resizable(False, False)
+    app = Application(master=window)
     check_event_thread = Thread(target=app.check_event)
     check_event_thread.start()
-    play_lyric_thread = Thread(target=app.show_lyric)
+    play_lyric_thread = Thread(target=app.highlight_lyric)
     play_lyric_thread.start()
+
     app.mainloop()
-
-
-
-
-
-
-
-
