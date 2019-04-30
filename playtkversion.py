@@ -145,7 +145,7 @@ class Application(tk.Frame):
             if not self.stop_flag:
                 if self.current_song_lyric and line_index < len(self.current_song_lyric):
                     if len(self.current_song_lyric[line_index]) > 1:
-                        print("3", self.progress_bar["value"], int(self.current_song_lyric[line_index][0]))
+
                         if self.progress_bar["value"] >= int(self.current_song_lyric[line_index][0]):
                             if line_index>0:
                                 self.lyric.tag_remove("bold", start_index, end_index)
