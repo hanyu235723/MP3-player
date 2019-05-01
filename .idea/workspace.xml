@@ -4,7 +4,8 @@
     <list default="true" id="e511c816-f885-4090-96c9-ebafe704aa57" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playtkversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/playtkversion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playtkversion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/temp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,44 +15,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="213" column="21" selection-start-line="213" selection-start-column="21" selection-end-line="213" selection-end-column="21" />
+            <state relative-caret-position="135">
+              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding>
-                <element signature="e#62#90#0" expanded="true" />
+                <element signature="e#6996#8127#0" />
+                <element signature="e#10210#10467#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="60">
-                <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/playtkversion.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2775">
-              <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.6/threading.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12525">
-              <caret line="841" selection-start-line="841" selection-end-line="841" />
             </state>
           </provider>
         </entry>
@@ -59,11 +31,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/temp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="199">
+              <caret line="119" column="39" lean-forward="true" selection-end-line="316" />
               <folding>
-                <element signature="e#56#76#0" expanded="true" />
+                <element signature="e#1077#1105#0" expanded="true" />
+                <element signature="e#6876#8007#0" />
+                <element signature="e#10185#10487#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python3.6/tkinter/font.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python3.6/genericpath.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -90,8 +82,8 @@
       <list>
         <option value="$PROJECT_DIR$/original.py" />
         <option value="$PROJECT_DIR$/temp.py" />
-        <option value="$PROJECT_DIR$/venv/temp.py" />
         <option value="$PROJECT_DIR$/playtkversion.py" />
+        <option value="$PROJECT_DIR$/venv/temp.py" />
         <option value="$PROJECT_DIR$/player.py" />
       </list>
     </option>
@@ -149,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.player">
+  <component name="RunManager" selected="Python.temp (1)">
     <configuration name="original" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="player" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -236,9 +228,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.temp (1)" />
         <item itemvalue="Python.player" />
         <item itemvalue="Python.temp" />
-        <item itemvalue="Python.temp (1)" />
         <item itemvalue="Python.original" />
       </list>
     </recent_temporary>
@@ -268,20 +260,27 @@
       <option name="project" value="LOCAL" />
       <updated>1556468693894</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add pause/resume func and remove stop button in UI">
+      <created>1556597601369</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556597601369</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1293" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15905511" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15905511" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992126" visible="true" weight="0.31409168" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5296108" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992126" visible="true" weight="0.3786078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3565365" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -289,6 +288,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007874" side_tool="true" weight="0.75382006" />
       <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -346,7 +346,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change lyric show style" />
-    <option name="LAST_COMMIT_MESSAGE" value="change lyric show style" />
+    <MESSAGE value="add pause/resume func and remove stop button in UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pause/resume func and remove stop button in UI" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python3.6/tkinter/font.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/lib/python3.6/tkinter/font.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/lib/python3.6/posixpath.py">
@@ -363,58 +380,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python3.6/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="3271" selection-start-line="3271" selection-end-line="3271" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/original.py" />
-    <entry file="file://$PROJECT_DIR$/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="213" column="21" selection-start-line="213" selection-start-column="21" selection-end-line="213" selection-end-column="21" />
-          <folding>
-            <element signature="e#62#90#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="60">
+            <caret line="3" selection-start-line="3" selection-end-line="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playtkversion.py">
+    <entry file="file:///usr/lib/python3.6/tkinter/scrolledtext.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2775">
-          <caret line="201" column="31" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="31" />
+        <state relative-caret-position="-136">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python3.6/threading.py">
+    <entry file="file://$PROJECT_DIR$/playtkversion.py" />
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/mutagen/_util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12525">
-          <caret line="841" selection-start-line="841" selection-end-line="841" />
+        <state relative-caret-position="190">
+          <caret line="535" selection-start-line="535" selection-end-line="535" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/temp.py">
+    <entry file="file:///usr/lib/python3.6/genericpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="e#56#76#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="405">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/geckodriver.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          </first_editor>
-          <second_editor />
+    <entry file="file:///usr/lib/python3.6/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="841" selection-start-line="841" selection-end-line="841" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="2318" selection-start-line="2318" selection-end-line="2318" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/tkinter/font.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/temp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="119" column="39" lean-forward="true" selection-end-line="316" />
+          <folding>
+            <element signature="e#1077#1105#0" expanded="true" />
+            <element signature="e#6876#8007#0" />
+            <element signature="e#10185#10487#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="e#6996#8127#0" />
+            <element signature="e#10210#10467#0" />
+          </folding>
         </state>
       </provider>
     </entry>
