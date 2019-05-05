@@ -1,38 +1,35 @@
+import tkinter as tk
 
-import pygame, tkinter as tk
-from tkinter.font import Font
-from tkinter import filedialog
-from mutagen.mp3 import MP3
-import eyed3
-from tkinter import ttk
-from PIL import Image, ImageTk
-import os
-import logging
-from os.path import isfile, join
-from random import choice
-from threading import Thread
-import sys, re
-from sqlalchemy import create_engine,MetaData
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column,String,INTEGER,REAL,TEXT
-from sqlalchemy.orm import sessionmaker
+class ExampleApp(tk.Tk):
+    def __init__(self):
+        tk.Tk.__init__(self)
+        t = SimpleTable(self, 10,2)
+        t.pack(side="top", fill="x")
+        t.set(0,0,"Hello, world")
+
+class SimpleTable(tk.Frame):
+    def __init__(self, parent, rows=10, columns=2):
+        # use black background so it "peeks through" to
+        # form grid lines
+        tk.Frame.__init__(self, parent, background="black")
+        self._widgets = []
+        for row in range(rows):
+            current_row = []
+            for column in range(columns):
+                label = tk.Label(self, text="%s/%s" % (row, column),
+                                 borderwidth=0, width=10)
+                label.grid(row=row, column=column, sticky="nsew", padx=1, pady=1)
+                current_row.append(label)
+            self._widgets.append(current_row)
+
+        for column in range(columns):
+            self.grid_columnconfigure(column, weight=1)
 
 
-eng= create_engine('sqlite:///s.db',echo=True)
-base = declarative_base()
-metadata= MetaData()
+    def set(self, row, column, value):
+        widget = self._widgets[row][column]
+        widget.configure(text=value)
 
-
-class Song_DB(base):
-
-    __tablename__="Songs"
-    id= Column(INTEGER,primary_key=True,autoincrement=True)
-    title = Column(TEXT)
-    song_path = Column(TEXT)
-    lyricfile = Column(TEXT)
-    length= Column(REAL)
-    album=Column(String)
-
-base.metadata.create_all(eng)
-
-print (Song_DB.__tablename__)
+if __name__ == "__main__":
+    app = ExampleApp()
+    app.mainloop()

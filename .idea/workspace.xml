@@ -17,22 +17,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="232" selection-start-line="232" selection-end-line="232" />
+            <state relative-caret-position="195">
+              <caret line="159" column="3" lean-forward="true" selection-start-line="159" selection-start-column="3" selection-end-line="159" selection-end-column="3" />
               <folding>
                 <element signature="e#1#29#0" expanded="true" />
-                <element signature="e#1580#2237#0" />
-                <element signature="e#7717#7870#0" />
-                <element signature="e#7909#8087#0" />
-                <element signature="e#8126#8209#0" />
-                <element signature="e#8249#9380#0" />
-                <element signature="e#9417#9604#0" />
-                <element signature="e#9645#10067#0" />
-                <element signature="e#10108#10474#0" />
-                <element signature="e#10503#10576#0" />
-                <element signature="e#10607#10698#0" />
-                <element signature="e#10733#10824#0" />
-                <element signature="e#10862#11050#0" />
               </folding>
             </state>
           </provider>
@@ -41,31 +29,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python3.6/dist-packages/sqlalchemy/ext/declarative/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
+            <state relative-caret-position="318">
               <caret line="833" selection-start-line="833" selection-end-line="833" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/song.db">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
+            <state relative-caret-position="8025">
               <caret line="551" selection-start-line="551" selection-end-line="551" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38145">
-              <caret line="2547" selection-start-line="2547" selection-end-line="2547" />
             </state>
           </provider>
         </entry>
@@ -73,20 +47,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/temp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="34" selection-start-line="34" selection-end-line="35" selection-end-column="29" />
-              <folding>
-                <element signature="e#1#29#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="258">
+              <caret line="25" column="55" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="25" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python3.6/tkinter/font.py">
+        <entry file="file:///usr/lib/python3.6/tkinter/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="34425">
+              <caret line="2298" selection-start-line="2298" selection-end-line="2298" />
             </state>
           </provider>
         </entry>
@@ -123,8 +94,8 @@
         <option value="$PROJECT_DIR$/original.py" />
         <option value="$PROJECT_DIR$/temp.py" />
         <option value="$PROJECT_DIR$/playtkversion.py" />
-        <option value="$PROJECT_DIR$/venv/temp.py" />
         <option value="$PROJECT_DIR$/song.db" />
+        <option value="$PROJECT_DIR$/venv/temp.py" />
         <option value="$PROJECT_DIR$/player.py" />
       </list>
     </option>
@@ -182,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.player">
+  <component name="RunManager" selected="Python.temp (1)">
     <configuration name="original" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="player" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -269,8 +240,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.player" />
         <item itemvalue="Python.temp (1)" />
+        <item itemvalue="Python.player" />
         <item itemvalue="Python.temp" />
         <item itemvalue="Python.original" />
       </list>
@@ -308,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556597601369</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add import from file and from dir func&#10;add save to db and load from db for local play list">
+      <created>1556821072622</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556821072622</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -320,7 +298,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3293718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992126" visible="true" weight="0.3582343" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992126" visible="true" weight="0.32088286" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3565365" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,7 +366,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change lyric show style" />
     <MESSAGE value="add pause/resume func and remove stop button in UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pause/resume func and remove stop button in UI" />
+    <MESSAGE value="add import from file and from dir func&#10;add save to db and load from db for local play list" />
+    <option name="LAST_COMMIT_MESSAGE" value="add import from file and from dir func&#10;add save to db and load from db for local play list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -402,16 +381,6 @@
           <url>file:///usr/lib/python3.6/tkinter/font.py</url>
           <line>71</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/player.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/player.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -464,41 +433,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38145">
-          <caret line="2547" selection-start-line="2547" selection-end-line="2547" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/tkinter/font.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3.6/genericpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geckodriver.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="1243" selection-start-line="1243" selection-end-line="1243" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="551" selection-start-line="551" selection-end-line="551" />
         </state>
       </provider>
     </entry>
@@ -516,51 +454,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/temp.py">
+    <entry file="file:///usr/lib/python3/dist-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="34" selection-start-line="34" selection-end-line="35" selection-end-column="29" />
-          <folding>
-            <element signature="e#1#29#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="2547" selection-start-line="2547" selection-end-line="2547" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/tkinter/font.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/dist-packages/sqlalchemy/engine/default.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8025">
+          <caret line="551" selection-start-line="551" selection-end-line="551" />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/lib/python3.6/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="1704" selection-start-line="1704" selection-end-line="1704" />
+        <state relative-caret-position="34425">
+          <caret line="2298" selection-start-line="2298" selection-end-line="2298" />
         </state>
       </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/genericpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geckodriver.log">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/song.db">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file:///usr/local/lib/python3.6/dist-packages/sqlalchemy/ext/declarative/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
+        <state relative-caret-position="318">
           <caret line="833" selection-start-line="833" selection-end-line="833" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/temp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="25" column="55" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="25" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
+        <state relative-caret-position="195">
+          <caret line="159" column="3" lean-forward="true" selection-start-line="159" selection-start-column="3" selection-end-line="159" selection-end-column="3" />
           <folding>
             <element signature="e#1#29#0" expanded="true" />
-            <element signature="e#1580#2237#0" />
-            <element signature="e#7717#7870#0" />
-            <element signature="e#7909#8087#0" />
-            <element signature="e#8126#8209#0" />
-            <element signature="e#8249#9380#0" />
-            <element signature="e#9417#9604#0" />
-            <element signature="e#9645#10067#0" />
-            <element signature="e#10108#10474#0" />
-            <element signature="e#10503#10576#0" />
-            <element signature="e#10607#10698#0" />
-            <element signature="e#10733#10824#0" />
-            <element signature="e#10862#11050#0" />
           </folding>
         </state>
       </provider>
